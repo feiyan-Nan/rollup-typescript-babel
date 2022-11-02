@@ -27,3 +27,6 @@ sh build.sh
 | 获取Moment的时间      | getMomentLanguage()           | 参数为可选传i18n的语言    |
 | i18n映射到后端多语言的key | getServiceLanguage()          | 参数必传  i18n的语言    |
 | 后端返回的语言key映射i18n | getAdminLanguageFromService() | 参数必传  后端返回的语言key |
+
+
+If you have any questions, please contact me liguigong@joyy.com
