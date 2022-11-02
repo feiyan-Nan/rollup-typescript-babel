@@ -1,21 +1,22 @@
 {
-  "name": "rollup-typescript-babel",
-  "version": "1.0.0",
-  "description": "A sample setup using Rollup and Babel to build TypeScript code, and using TypeScript for type-checking.",
+  "name": "@sl/ads-sp-language",
+  "version": "1.0.2",
+  "description": "sp-language",
   "scripts": {
+    "dev": "npm run build:types & npm run build:js",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "rollup -c",
-    "build": "npm run build:types && npm run build:js"
+    "build:types": "tsc -w --emitDeclarationOnly",
+    "build:js": "rollup -w -c",
+    "build": "tsc --emitDeclarationOnly && rollup -c"
   },
-  "main": "dist/rollup-plugin-babel.cjs.js",
-  "module": "dist/rollup-plugin-babel.esm.js",
-  "browser": "dist/rollup-plugin-babel.iife.js",
+  "files": ["dist"],
+  "main": "dist/sp-language.cjs.js",
+  "module": "dist/sp-language.esm.js",
   "types": "dist/types/index.d.ts",
   "author": {
-    "name": "Oleksandr T.",
-    "email": "oleksandr.tarasiuk@outlook.com"
+    "name": "liguigong",
+    "email": "liguigong@shoplineapp.com"
   },
   "license": "MIT",
   "devDependencies": {
