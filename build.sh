@@ -53,24 +53,30 @@ read -n 1 -t 300 -p "请选择你要发布的版本 ( 1patch补丁 | 2minor次�
 if [ "$selectVersion" == 1 ];
 then
   npm version patch
+elif [  "$selectVersion" == 2 ];
+then
+  npm version minor
+elif [  "$selectVersion" == 3 ];
+then
+  npm version major
 fi;
 
-read -n 1 -t 300 -p "确定是否发布当前版本 ( y确定 | n取消 | s查看所有版本):" sure;
-
-echo '\n\n';
-
-if [ "$sure" == 'n' ];
-then
-  success '\n\n\n取消发布\n\n\n';
-
-  exit 1;
-elif [  "$sure" == 's' ];
-then
-
-  npm view $PACKAGE_NAME versions --registry=$registry;
-
-  exit 1;
-fi;
+#read -n 1 -t 300 -p "确定是否发布当前版本 ( y确定 | n取消 | s查看所有版本):" sure;
+#
+#echo '\n\n';
+#
+#if [ "$sure" == 'n' ];
+#then
+#  success '\n\n\n取消发布\n\n\n';
+#
+#  exit 1;
+#elif [  "$sure" == 's' ];
+#then
+#
+#  npm view $PACKAGE_NAME versions --registry=$registry;
+#
+#  exit 1;
+#fi;
 
 yarn build  || { error "\n\n\n打包命令出错，请检查\n\n"; exit 1; }
 
