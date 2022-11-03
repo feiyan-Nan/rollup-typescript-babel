@@ -1,6 +1,6 @@
 {
   "name": "@sl/ads-sp-language",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "sp-language",
   "scripts": {
     "dev": "npm run build:types & npm run build:js",
