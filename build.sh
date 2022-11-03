@@ -49,7 +49,7 @@ success "\n\n最近一个版本：$latest \n\n当前版本    ：$NODE_VERSION";
 echo '\n\n';
 
 read -n 1 -t 300 -p "请选择你要发布的版本 ( 1patch补丁 | 2minor次要版本 | 3major主要版本):" selectVersion;
-
+echo '\n\n';
 if [ "$selectVersion" == 1 ];
 then
   npm version patch
