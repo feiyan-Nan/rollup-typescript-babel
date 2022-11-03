@@ -36,15 +36,13 @@ check_success $? 'git push 失败，请检查，并手动提交'
 
 registry=https://npm-registry.duowan.com
 
-NODE_VERSION=$(node -p -e "require('./package.json').version");
-
 PACKAGE_NAME=$(node -p -e "require('./package.json').name");
 
 version=`npm view $PACKAGE_NAME dist-tags --registry=$registry`;
 
 latest=$(node -p -e "eval($version).latest");
 
-success "\n\n最近一个版本：$latest \n\n当前版本    ：$NODE_VERSION";
+success "\n\n最近一个版本：$latest \n\n";
 
 echo '\n\n';
 
@@ -60,6 +58,8 @@ elif [  "$selectVersion" == 3 ];
 then
   npm version major
 fi;
+
+NODE_VERSION=$(node -p -e "require('./package.json').version");
 
 #read -n 1 -t 300 -p "确定是否发布当前版本 ( y确定 | n取消 | s查看所有版本):" sure;
 #
