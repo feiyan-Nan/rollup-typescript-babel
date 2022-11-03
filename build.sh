@@ -44,10 +44,9 @@ latest=$(node -p -e "eval($version).latest");
 
 success "\n\n最近一个版本：$latest \n\n";
 
-latest=1.2.3
 array=(${latest//./ })
 
-A=${array[0]}.${array[1]}.$[${array[0]}+1]
+A=${array[0]}.${array[1]}.$[${array[2]}+1]
 echo $A
 B=${array[0]}.$[${array[1]}+1].${array[2]}
 echo $B
