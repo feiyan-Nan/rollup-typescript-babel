@@ -1,6 +1,6 @@
 {
   "name": "@sl/ads-sp-language",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "sp-language",
   "scripts": {
     "dev": "npm run build:types & npm run build:js",
@@ -10,7 +10,9 @@
     "build:js": "rollup -w -c",
     "build": "tsc --emitDeclarationOnly && rollup -c"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "dist/sp-language.cjs.js",
   "module": "dist/sp-language.esm.js",
   "types": "dist/types/index.d.ts",
