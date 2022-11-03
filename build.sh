@@ -47,15 +47,13 @@ success "\n\n最近一个版本：$latest \n\n";
 array=(${latest//./ })
 
 patch=${array[0]}.${array[1]}.$[${array[2]}+1]
-echo $A
+
 minor=${array[0]}.$[${array[1]}+1].${array[2]}
-echo $B
+
 major=$[${array[0]}+1].${array[1]}.${array[2]}
-echo $C
 
-echo '\n\n';
 
-read -n 1 -t 300 -p "请选择你要发布的版本 (\n 1.patch: ($patch) | 2.minor: ($minor) | 3.major: ($major)):" selectVersion;
+read -n 1 -t 300 -p "请选择你要发布的版本 ( 1.patch: ($patch) | 2.minor: ($minor) | 3.major: ($major)):" selectVersion;
 echo '\n\n';
 if [ "$selectVersion" == 1 ];
 then
