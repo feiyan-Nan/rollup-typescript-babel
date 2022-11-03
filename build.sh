@@ -48,14 +48,14 @@ success "\n\n最近一个版本：$latest \n\n当前版本    ：$NODE_VERSION";
 
 echo '\n\n';
 
-read -n 1 -t 30 -p "请选择你要发布的版本 ( 1patch补丁 | 2minor次要版本 | 3major主要版本):" selectVersion;
+read -n 1 -t 300 -p "请选择你要发布的版本 ( 1patch补丁 | 2minor次要版本 | 3major主要版本):" selectVersion;
 
 if [ "$selectVersion" == 1 ];
 then
   npm version patch
 fi;
 
-read -n 1 -t 30 -p "确定是否发布当前版本 ( y确定 | n取消 | s查看所有版本):" sure;
+read -n 1 -t 300 -p "确定是否发布当前版本 ( y确定 | n取消 | s查看所有版本):" sure;
 
 echo '\n\n';
 
