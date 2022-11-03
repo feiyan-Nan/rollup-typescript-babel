@@ -26,6 +26,14 @@ function check_success (){
   fi
 }
 
+git add .
+
+git commit -m "feat: 升级版本"
+
+git push
+
+check_success $? 'git push 失败，请检查，并手动提交'
+
 registry=https://npm-registry.duowan.com
 
 NODE_VERSION=$(node -p -e "require('./package.json').version");
@@ -39,6 +47,13 @@ latest=$(node -p -e "eval($version).latest");
 success "\n\n最近一个版本：$latest \n\n当前版本    ：$NODE_VERSION";
 
 echo '\n\n';
+
+read -n 1 -t 30 -p "请选择你要发布的版本 ( 1patch补丁 | 2minor次要版本 | 3major主要版本):" selectVersion;
+
+if [ "$selectVersion" == 1 ];
+then
+  npm version patch
+fi;
 
 read -n 1 -t 30 -p "确定是否发布当前版本 ( y确定 | n取消 | s查看所有版本):" sure;
 
@@ -65,13 +80,6 @@ check_success $? 'publish 请检查版本号是否正确及 | 或者是否有发
 
 success '\n\n\n打包成功\n\n\n';
 
-git add .
-
-git commit -m "feat: 升级版本$NODE_VERSION"
-
-git push
-
-check_success $? 'git push 失败，请检查，并手动提交'
 
 success '发布成功\n\n\n';
 
