@@ -9,7 +9,7 @@
     "build:types": "tsc -w --emitDeclarationOnly",
     "build:js": "rollup -w -c",
     "build": "tsc --emitDeclarationOnly && rollup -c",
-    "publish": "sh build.sh"
+    "publishPackage": "sh build.sh"
   },
   "files": [
     "dist"
