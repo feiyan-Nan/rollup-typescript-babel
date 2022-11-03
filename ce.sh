@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PS3='请选择你要发布的版本: '
-foods=("patch" "minor" "major" "Quit")
+foods=("patch" "minor" "major" "quit")
 select fav in "${foods[@]}"; do
     case $fav in
         "patch")
@@ -17,7 +17,7 @@ select fav in "${foods[@]}"; do
 	    # optionally call a function or run some code here
 	    break
             ;;
-	"Quit")
+	"quit")
 	    echo "User requested exit"
 	    exit
 	    ;;

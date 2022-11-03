@@ -46,16 +46,16 @@ success "\n\n最近一个版本：$latest \n\n";
 
 array=(${latest//./ })
 
-A=${array[0]}.${array[1]}.$[${array[2]}+1]
+patch=${array[0]}.${array[1]}.$[${array[2]}+1]
 echo $A
-B=${array[0]}.$[${array[1]}+1].${array[2]}
+minor=${array[0]}.$[${array[1]}+1].${array[2]}
 echo $B
-C=$[${array[0]}+1].${array[1]}.${array[2]}
+major=$[${array[0]}+1].${array[1]}.${array[2]}
 echo $C
 
 echo '\n\n';
 
-read -n 1 -t 300 -p "请选择你要发布的版本 ( 1patch补丁 | 2minor次要版本 | 3major主要版本):" selectVersion;
+read -n 1 -t 300 -p "请选择你要发布的版本 ( 1.patch: ($patch) | 2.minor: ($minor) | 3.major: ($major)):" selectVersion;
 echo '\n\n';
 if [ "$selectVersion" == 1 ];
 then
