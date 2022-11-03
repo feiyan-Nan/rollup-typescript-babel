@@ -91,10 +91,10 @@ npm publish --registry=$registry
 
 check_success $? 'publish 请检查版本号是否正确及 | 或者是否有发布权限'
 
-success '\n\n\n打包成功\n\n\n';
+success '\n\n打包成功\n\n';
 
 
-success '发布成功\n\n\n';
+success '发布成功\n\n';
 
 RUN_SCRIPT="yarn add $PACKAGE_NAME@$NODE_VERSION"
 
